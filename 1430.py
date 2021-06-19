@@ -4,5 +4,7 @@ c = int(input())
 
 num = a*b*c
 
+str_num = str(num)
+
 for i in range(0, 10):
-    print(num.count(str(i)))
+    print(str_num.count(str(i)))
