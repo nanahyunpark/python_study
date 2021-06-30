@@ -1,19 +1,47 @@
-my_2d_list = []
+cow_list = []
 
-rows_num = 3
-cols_num = 5
+cows_num = int(input())
 
-print(my_2d_list)
+for cow_num in range(cows_num):
+    cow = input().split()
+    # cow[0] = int(cow[0])
+    # cow[1] = int(cow[1])
+    # for index, num in enumerate(cow):
+    #     cow[index] = int(num)
+    cow = list(map(int, cow))
+    cow_list.append(cow)
 
-for row_num in range(rows_num):
-    my_2d_list.append([])
-    print(len(my_2d_list), my_2d_list)
-    for col_num in range(cols_num):
-        my_2d_list[-1].append(row_num)
+    #1.offset
 
-print(my_2d_list)
+cow_offset = 0
+min = None
+cow_list.sort()
 
-for row_num in range(rows_num):
-    for col_num in range(cols_num):
-        print(my_2d_list[row_num][col_num], end='')
-    print()
+for index, cow in enumerate(cow_list):
+    if index == len(cow_list)-1:
+        break
+    if cow[1] != cow_list[index+1][1]:
+        offset = cow_list[index+1][0] - cow[0]  
+        if min is None:
+            min = offset
+        if min > offset:
+            min = offset
+not_infected = 0
+    #2.처음부터 감염 아니여도 되는 소
+    #3.감염된 소 - 2.
+for index, cow in enumerate(cow_list):
+    # if index == len(cow_list)-1:
+    #     break
+    if cow[1] != 0 and cow_list[index+1][1] == 1:
+        if cow_list[index+1][0] - cow_list[index][0] >= min:
+            not_infected = not_infected + 1
+infected = 0
+#전체 감염된 소 값 구하기
+for cow in cow_list:
+    if cow[1] == 1:
+        infected = infected + 1
+
+ans = infected - not_infected
+
+print(ans)
+
