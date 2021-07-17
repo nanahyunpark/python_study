@@ -20,9 +20,8 @@ for i in range(0,5):
 # for i in range(0,5):
 #     print(nums[i])
 
-for i in range(0,5):
-    for j in range(0, len(nums[i])):
-        n3.append("")
+for i in range(0,15):
+    n3.append("")
         
 for i in range(0,5):
     for j in range(0, len(nums[i])):
