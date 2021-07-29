@@ -1,4 +1,3 @@
-import interest_rate
 
 def get_number(num):
     result = 0
