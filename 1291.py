@@ -2,7 +2,7 @@
 
 def get_multiplication(n1, n2):
     num_mul = n1
-    if(n1 < n2):
+    if(n1 <= n2):
         for i in range(1, 10):
             for j in range(0, (n2-n1)+1):
                 print(num_mul, " * ", i, " = ", end="", sep="")
@@ -12,7 +12,7 @@ def get_multiplication(n1, n2):
                 num_mul = num_mul + 1
             print()
             num_mul = n1
-    if(n1 > n2):
+    elif(n1 > n2):
         for i in range(1, 10):
             for j in range(0, (n1-n2)+1):
                 print(num_mul, " * ", i, " = ", end="", sep="")
@@ -22,12 +22,12 @@ def get_multiplication(n1, n2):
                 num_mul = num_mul - 1
             print()
             num_mul = n1
-    if(n1 == n2):
-        for i in range(1, 10):
-            print(num_mul, " * ", i, " = ", end="", sep="")
-            if(num_mul*i < 10):
-                print(" ", end="")
-            print((num_mul*i), "   ", sep="")
+    # if(n1 == n2):
+    #     for i in range(1, 10):
+    #         print(num_mul, " * ", i, " = ", end="", sep="")
+    #         if(num_mul*i < 10):
+    #             print(" ", end="")
+    #         print((num_mul*i), "   ", sep="")
 
 
 def main():
