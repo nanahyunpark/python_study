@@ -1,6 +1,3 @@
-from typing import Sequence
-
-
 ans_seq = []
 
 def make_sequence():
