@@ -10,6 +10,9 @@ class Student:
 def main():
     info = input().split()
     student = Student(name=info[0], school=info[1], grade=info[2])
+    print(dir(student))
+    student.value = 123
+    print(dir(student))
     print(student.get_msg())
 
 if(__name__ == '__main__'):
